@@ -1,0 +1,26 @@
+<div class="pen-title">
+  <h1>Events Management</h1>
+</div>
+<!-- Form Module-->
+<div class="module form-module">
+  <div class="toggle"><a href="#/login"><i class="fa fa-times fa-pencil"></i></a>
+    <div class="tooltip">Click Me</div>
+  </div>
+ 
+  <div class="form">
+    <h2>Create an account</h2>
+	  
+    <form name="registerForm">
+      <input type="text" placeholder="Username" name="username" ng-model="fm.username" required/>
+		
+      <input type="password" placeholder="Password" ng-model="fm.password" ng-disabled="registerForm.username.$invalid" name="password" required/>
+		
+      <input type="email" placeholder="Email Address" ng-disabled="registerForm.username.$invalid  || registerForm.password.$invalid" required name="email" ng-model="fm.email"/>
+		
+      <input type="tel" placeholder="Phone Number" ng-disabled="registerForm.username.$invalid  || registerForm.password.$invalid || registerForm.email.$invalid " name="phone" ng-model="fm.phone" required/>
+
+      <button  ng-disabled="registerForm.username.$invalid  || registerForm.password.$invalid || registerForm.email.$invalid || registerForm.phone.$invalid " ng-click="createAccount();">Register</button>
+    </form>
+  </div>
+ 
+</div>

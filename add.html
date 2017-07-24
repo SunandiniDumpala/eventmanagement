@@ -1,0 +1,30 @@
+
+        <div class="modal-body">
+			<div class="module form-module form-module-pop">
+				<div class="clear"></div>
+          <div class="form">
+			  {{ data }}
+    <h2>{{mainTitle}} </h2>
+	  
+    <form name="registerForm">
+      <input type="text" placeholder="Event Name" name="eventName" ng-model="fm.eventName" required/>
+		
+      <input type="date" placeholder="Event Date" ng-model="fm.eventDate" ng-disabled="registerForm.eventName.$invalid" name="eventDate" required/>
+		
+      <input type="text" placeholder="Event Location" ng-disabled="registerForm.eventName.$invalid  || registerForm.eventDate.$invalid" required name="eventLocation" ng-model="fm.eventLocation"/>
+		
+      <input type="tel" placeholder="Phone Number" ng-disabled="registerForm.eventName.$invalid  || registerForm.eventDate.$invalid || registerForm.eventLocation.$invalid " name="phone" ng-model="fm.phone" required/>
+		<textarea class="form-control" ng-model="fm.eventAddress"></textarea>
+
+<br>
+
+      <button  ng-disabled="registerForm.eventName.$invalid  || registerForm.eventDate.$invalid || registerForm.eventLocation.$invalid || registerForm.phone.$invalid " ng-click="ok(btnTitle);" >{{btnTitle}} </button>
+    </form>
+  </div>
+			</div>
+         
+        </div>
+        <div class="modal-footer">
+            
+            <button class="btn btn-warning" type="button" ng-click="cancel();">Cancel</button>
+        </div>

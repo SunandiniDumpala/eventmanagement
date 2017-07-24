@@ -1,0 +1,19 @@
+<div class="pen-title">
+  <h1>Events Management</h1>
+</div>
+<!-- Form Module-->
+<div class="module form-module">
+  <div class="toggle"><a href="#/register"><i class="fa fa-times fa-pencil"></i></a>
+    <div class="tooltip">Click Me</div>
+  </div>
+  <div class="form">
+    <h2>Login to your account</h2>
+	  <span class="errorMessage">{{message}}</span>
+    <form name="loginForm">
+      <input type="text" placeholder="Username" name="username" ng-model="fm.username" required/>
+      <input type="password" placeholder="Password" name="password" ng-model="fm.password" ng-disabled="loginForm.username.$invalid" required/>
+      <button ng-disabled="loginForm.username.$invalid  || loginForm.password.$invalid" ng-click="accountLogin();" >Login</button>
+    </form>
+  </div>
+   
+</div>

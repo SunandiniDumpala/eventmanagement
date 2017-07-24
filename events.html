@@ -1,0 +1,36 @@
+
+<div class="clear"></div>
+<div class="form">
+    <h2>My Events </h2>
+	  <div>
+		  <div class="panel panel-info">
+  <!-- Default panel contents -->
+  <div class="panel-heading"> <i class="fa fa-calendar" aria-hidden="true"></i> All My Events  <a class="btn btn-sm btn-primary pull-right" ng-click="openAddEventPopup();" > <i class="fa fa-plus" aria-hidden="true"  ></i> Add Event</a></div>
+  <div class="panel-body">
+	  <table class="table table-bordered table-hover">
+		<tr class="info"> 
+		<th>Event Name</th>  
+		<th>Event Date</th>  
+		<th>Event Location</th>  
+		<th>Phone</th> 
+		<th>Address</th>  
+		<th>Actions</th> 
+		  </tr>
+		  <tr ng-repeat="row in events track by row.$id">
+		<td> {{ row.eventName }} </td>  
+		<td> {{ row.eventDate }}</td>  
+		<td> {{ row.eventLocation }}</td>  
+		<td> {{ row.phone }}</td>
+		<td> {{ row.eventAddress }}</td>
+		<td> 
+			  <a href="" class="btn btn-sm btn-default"  ng-click="openEditEventPopup(row);"> <i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
+			  <a href="" class="btn btn-sm btn-danger" ng-click="deleteEvent(row);"> <i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+			  </td> 
+         </tr>
+		  </table>
+			  </div>
+		  </div>
+	 
+	  </div>
+   
+  </div>
